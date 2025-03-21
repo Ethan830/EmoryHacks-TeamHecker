@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "Color Blind Adjuster",
   "version": "1.0",
-  "description": "Adjusts webpage colors for different types of color blindness.",
-  "permissions": ["activeTab", "scripting"],
+  "description": "Adjust webpage colors for different types of color blindness.",
+  "permissions": ["activeTab", "scripting", "storage"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
