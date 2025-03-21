@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Change Background Color",
+  "version": "1.0",
+  "description": "Click to change background color.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
