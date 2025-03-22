@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Your Type</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .option label {
+            margin-left: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Choose Your Type</h1>
+
+    <div class="protanopia">
+        <input type="checkbox" id="red">
+        <label for="red">protanopia</label>
+    </div>
+
+    <div class="deuteranopia">
+        <input type="checkbox" id="green">
+        <label for="green">deuteranopia</label>
+    </div>
+
+    <div class="tritanopia">
+        <input type="checkbox" id="blue">
+        <label for="blue">tritanopia</label>
+    </div>
+
+    <button>Apply</button><br><br>
+
+    <button id="testButton">Take Color Blind Test</button>
+    <script src="popup.js"></script>
+</body>
+
+</html>
