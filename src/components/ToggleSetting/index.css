@@ -9,7 +9,7 @@
   background-color: #fff;
   border: 1px;
   border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 5px rgba(83, 83, 83, 0.05);
   box-sizing: border-box;
   gap: 12px;
 }
@@ -38,7 +38,7 @@
 }
 
 .side-button:hover {
-  background-color: #36363b;
+  background-color: #999999;
   transform: scale(1.05);
 }
 
