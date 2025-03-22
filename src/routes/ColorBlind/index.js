@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Option from "../../components/Option";
 import BackButton from "../../components/BackButton";
-import styles from "./index.css";
+import "./index.css";
 import Switch from "../../components/Switch";
 
 const ColorBlind = () => {
@@ -21,18 +21,34 @@ const ColorBlind = () => {
   };
 
   return (
-    <div className="colorblind-page" style={styles}>
+    <div className="colorblind-page">
       <BackButton />
-      <Switch storageKey="colorToggle" />
+      <Switch label={"Colorblind Filter"} storageKey="colorToggle" />
 
       <h1>Choose Your Type</h1>
 
-      <Option label="Protanopia" color="red" onClick={() => setSelectedMode("protanopia")} />
-      <Option label="Deuteranopia" color="green" onClick={() => setSelectedMode("deuteranopia")} />
-      <Option label="Tritanopia" color="blue" onClick={() => setSelectedMode("tritanopia")} />
+      <Option
+        label="Protanopia"
+        color="red"
+        onClick={() => setSelectedMode("protanopia")}
+      />
+      <Option
+        label="Deuteranopia"
+        color="green"
+        onClick={() => setSelectedMode("deuteranopia")}
+      />
+      <Option
+        label="Tritanopia"
+        color="blue"
+        onClick={() => setSelectedMode("tritanopia")}
+      />
 
-      <button className="applyBtn" onClick={handleApply}>Apply</button>
-      <button id="testButton" onClick={handleClick}>Take Color Blind Test</button>
+      <button className="applyBtn" onClick={handleApply}>
+        Apply
+      </button>
+      <button id="testButton" onClick={handleClick}>
+        Take Color Blind Test
+      </button>
     </div>
   );
 };

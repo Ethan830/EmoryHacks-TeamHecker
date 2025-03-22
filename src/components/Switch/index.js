@@ -1,26 +1,28 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
 
-const Switch = (storageKey) => {
-  const [switchState, setSwitch] = useState(
-    () => JSON.parse(localStorage.getItem(storageKey)) || false
-  );
+const Switch = ({ label, storageKey }) => {
+  const [isOn, setIsOn] = useState(false);
 
-  // Save state to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem(storageKey, JSON.stringify(switchState));
-  }, [switchState, storageKey]);
+    const savedValue = localStorage.getItem(storageKey);
+    if (savedValue !== null) {
+      setIsOn(JSON.parse(savedValue));
+    }
+  }, [storageKey]);
+
+  useEffect(() => {
+    localStorage.setItem(storageKey, JSON.stringify(isOn));
+  }, [isOn, storageKey]);
+
   return (
-    <label className="switch">
-      <input
-        type="checkbox"
-        checked={switchState}
-        onChange={() => {
-          setSwitch(!switchState);
-        }}
-      />
-      <span className="slider round"></span>
-    </label>
+    <div className="inline-container">
+      <span>{label}</span>
+      <label className="switch">
+        <input type="checkbox" checked={isOn} onChange={() => setIsOn(!isOn)} />
+        <span className="slider round"></span>
+      </label>
+    </div>
   );
 };
 

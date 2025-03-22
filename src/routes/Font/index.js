@@ -15,11 +15,11 @@ const Font = () => {
   return (
     <div>
       <BackButton />
-      <Switch storageKey="fontToggle" />
-      <div class="font-size-container" onClick={handleSlide}>
+      <Switch label={"Font"} storageKey="fontToggle" />
+      <div className="font-size-container" onClick={handleSlide}>
         <label for="fontSlider">Font Size</label>
         <input type="range" id="fontSlider" min="10" max="40" value="16" />
-        <div class="preview-text" id="previewText">
+        <div className="preview-text" id="previewText">
           This is a preview text.
         </div>
       </div>
