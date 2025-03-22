@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Option from "../../components/Option";
 import BackButton from "../../components/BackButton";
 import styles from "./index.css";
+import Switch from "../../components/Switch";
 
 const ColorBlind = () => {
   const [selectedMode, setSelectedMode] = useState("protanopia");
@@ -21,6 +22,7 @@ const ColorBlind = () => {
   return (
     <div className="colorblind-page" style={styles}>
       <BackButton />
+      <Switch storageKey="colorToggle" />
 
       <h1>Choose Your Type</h1>
 
