@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./toggle.css";
 
-const ToggleSetting = ({ label, link, checked, onToggle }) => {
+const ToggleSetting = ({ label, route, checked, onToggle }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(route);
+  };
+
   return (
     <div className="inline-container">
       <span>{label}</span>
@@ -9,9 +16,9 @@ const ToggleSetting = ({ label, link, checked, onToggle }) => {
         <input type="checkbox" checked={checked} onChange={onToggle} />
         <span className="slider round"></span>
       </label>
-      <a href={link} className="side-button">
+      <button onClick={handleClick} className="side-button">
         &gt;
-      </a>
+      </button>
     </div>
   );
 };

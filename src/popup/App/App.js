@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
 import ToggleSetting from "../../components/ToggleSetting";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { ColorBlind, Font } from "../../routes";
 
-const App = () => {
+const Home = () => {
   const [fontEnabled, setFontEnabled] = useState(false);
   const [colorEnabled, setColorEnabled] = useState(false);
   const [colorType, setColorType] = useState("protanopia");
@@ -36,39 +38,30 @@ const App = () => {
 
       <ToggleSetting
         label="Font"
-        link="font_option.html"
+        route="/font"
         checked={fontEnabled}
         onToggle={() => setFontEnabled(!fontEnabled)}
       />
 
       <ToggleSetting
         label="Colorblind"
-        link="colorblind_option.html"
+        route="/colorblind"
         checked={colorEnabled}
         onToggle={() => setColorEnabled(!colorEnabled)}
       />
-
-      <div style={{ marginTop: "1rem" }}>
-        <label htmlFor="colorType">Color Type:</label>
-        <select
-          id="colorType"
-          value={colorType}
-          onChange={(e) => setColorType(e.target.value)}
-        >
-          <option value="protanopia">Protanopia</option>
-          <option value="deuteranopia">Deuteranopia</option>
-          <option value="tritanopia">Tritanopia</option>
-        </select>
-
-        <button
-          id="apply"
-          onClick={applyColorFilter}
-          style={{ marginTop: "10px" }}
-        >
-          Apply
-        </button>
-      </div>
     </div>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/colorblind" element={<ColorBlind />} />
+        <Route path="/font" element={<Font />} />
+      </Routes>
+    </Router>
   );
 };
 

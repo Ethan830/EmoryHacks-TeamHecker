@@ -43,7 +43,7 @@ function applyFilter(mode) {
 function textSize(mode) {
   const elements = document.querySelectorAll("*");
   elements.forEach((el) => {
-    el.style.fontSize = `${size}px`;
+    el.style.fontSize = `${null}px`; // change size to null
   });
 }
 
@@ -55,7 +55,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
   if (request.action === "changeFontSize" && request.size) {
     console.log(`Changing font size to ${request.size}px`);
-    textSizeSize(request.size);
+    textSize(request.size);
     sendResponse({ status: "Font size changed" });
   }
 });
