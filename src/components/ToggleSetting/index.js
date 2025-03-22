@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
 
-const ToggleSetting = ({ label, route, storageKey }) => {
+const ToggleSetting = ({ label, route, storageKey,icon }) => {
   const navigate = useNavigate();
 
   const [switchState, setSwitch] = useState(
@@ -20,6 +20,7 @@ const ToggleSetting = ({ label, route, storageKey }) => {
 
   return (
     <div className="inline-container">
+      <image href={icon}></image>
       <span>{label}</span>
       <label className="switch">
         <input

@@ -8,11 +8,17 @@ const Home = () => {
   return (
     <div style={{ padding: "1rem", width: "220px" }}>
       <h1>Color Blind Adjuster</h1>
-      <ToggleSetting label="Font" route="/font" storageKey="fontToggle" />
+      <ToggleSetting
+        label="Font" 
+        route="/font" 
+        storageKey="fontToggle"
+        icon={""}
+      />
       <ToggleSetting
         label="Colorblind"
         route="/colorblind"
         storageKey="colorToggle"
+        icon={"/public"}
       />
     </div>
   );
