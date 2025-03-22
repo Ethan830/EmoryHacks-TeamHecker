@@ -1,6 +1,7 @@
 import React from "react";
 import BackButton from "../../components/BackButton";
 import Switch from "../../components/Switch";
+import './index.css'
 
 const Font = () => {
   const handleSlide = () => {
@@ -13,7 +14,7 @@ const Font = () => {
   };
 
   return (
-    <div>
+    <div class="body">
       <BackButton />
       <Switch label={"Font"} storageKey="fontToggle" />
       <div className="font-size-container" onClick={handleSlide}>
