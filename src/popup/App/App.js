@@ -8,7 +8,6 @@ import fontIcon from "../../images/font.png"
 const Home = () => {
   return (
     <div style={{ padding: "1rem", width: "220px" }}>
-      <h1>Color Blind Adjuster</h1>
       <ToggleSetting
         label="Font" 
         route="/font" 
