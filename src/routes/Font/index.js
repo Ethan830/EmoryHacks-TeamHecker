@@ -1,5 +1,6 @@
 import React from "react";
 import BackButton from "../../components/BackButton";
+import Switch from "../../components/Switch";
 
 const Font = () => {
   const handleSlide = () => {
@@ -14,6 +15,7 @@ const Font = () => {
   return (
     <div>
       <BackButton />
+      <Switch storageKey="fontToggle" />
       <div class="font-size-container" onClick={handleSlide}>
         <label for="fontSlider">Font Size</label>
         <input type="range" id="fontSlider" min="10" max="40" value="16" />
