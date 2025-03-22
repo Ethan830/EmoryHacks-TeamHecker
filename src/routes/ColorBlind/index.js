@@ -15,6 +15,7 @@ const ColorBlind = () => {
       });
     });
   };
+
   const handleClick = () => {
     window.open("https://enchroma.com/pages/color-blindness-test");
   };
@@ -26,30 +27,12 @@ const ColorBlind = () => {
 
       <h1>Choose Your Type</h1>
 
-      <Option
-        label="Protanopia"
-        color="red"
-        onClick={() => setSelectedMode("protanopia")}
-      />
-      <Option
-        label="Deuteranopia"
-        color="green"
-        onClick={() => setSelectedMode("deuteranopia")}
-      />
-      <Option
-        label="Tritanopia"
-        color="blue"
-        onClick={() => setSelectedMode("tritanopia")}
-      />
+      <Option label="Protanopia" color="red" onClick={() => setSelectedMode("protanopia")} />
+      <Option label="Deuteranopia" color="green" onClick={() => setSelectedMode("deuteranopia")} />
+      <Option label="Tritanopia" color="blue" onClick={() => setSelectedMode("tritanopia")} />
 
-      <button className="applyBtn" onClick={handleApply}>
-        Apply
-      </button>
-      <button id="testButton" onClick={handleClick}>
-        Take Color Blind Test
-      </button>
-
-      <script src="popup.js"></script>
+      <button className="applyBtn" onClick={handleApply}>Apply</button>
+      <button id="testButton" onClick={handleClick}>Take Color Blind Test</button>
     </div>
   );
 };
