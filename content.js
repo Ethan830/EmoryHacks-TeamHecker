@@ -54,7 +54,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
     if (request.action === "changeFontSize" && request.size) {
       console.log(`Changing font size to ${request.size}px`);
-      textSizeSize(request.size);
+      textSize(request.size);
       sendResponse({ status: "Font size changed" });
   }
 
