@@ -20,7 +20,7 @@ const ToggleSetting = ({ label, route, storageKey,icon }) => {
 
   return (
     <div className="inline-container">
-      <image href={icon}></image>
+      <img src={icon}/>
       <span>{label}</span>
       <label className="switch">
         <input
