@@ -39,10 +39,23 @@ function applyFilter(mode) {
     });
 }
 
+function textSize(mode){
+  const elements = document.querySelectorAll('*');
+  elements.forEach(el => {
+      el.style.fontSize = `${size}px`;
+  });
+}
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "applyColorFilter" && request.mode) {
         console.log(`Applying ${request.mode} filter...`);
         applyFilter(request.mode);
         sendResponse({ status: "Filter applied" });
     }
+    if (request.action === "changeFontSize" && request.size) {
+      console.log(`Changing font size to ${request.size}px`);
+      textSizeSize(request.size);
+      sendResponse({ status: "Font size changed" });
+  }
+
 });
