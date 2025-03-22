@@ -3,6 +3,7 @@ import "./App.css";
 import ToggleSetting from "../../components/ToggleSetting";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ColorBlind, Font } from "../../routes";
+import fontIcon from "../../images/font.png"
 
 const Home = () => {
   return (
@@ -12,13 +13,13 @@ const Home = () => {
         label="Font" 
         route="/font" 
         storageKey="fontToggle"
-        icon={""}
+        icon={fontIcon}
       />
       <ToggleSetting
         label="Colorblind"
         route="/colorblind"
         storageKey="colorToggle"
-        icon={"/public"}
+        icon={fontIcon}
       />
     </div>
   );
