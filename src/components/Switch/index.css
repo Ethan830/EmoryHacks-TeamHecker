@@ -59,7 +59,7 @@
 }
 
 input:checked + .slider {
-  background-color: #24cf60;
+  background-color: #0673f9;
 }
 
 input:checked + .slider:before {

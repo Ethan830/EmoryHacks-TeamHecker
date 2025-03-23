@@ -17,7 +17,7 @@
 
 .font-size-container label {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     display: block;
     margin-bottom: 10px;
 }
@@ -27,6 +27,8 @@
 }
 
 .preview-text {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
     font-size: 16px;
 }

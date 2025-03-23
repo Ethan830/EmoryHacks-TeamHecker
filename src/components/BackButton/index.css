@@ -8,5 +8,6 @@
 }
 
 .back-button:hover {
+  font-weight:600 ;
   text-decoration: black;
 }

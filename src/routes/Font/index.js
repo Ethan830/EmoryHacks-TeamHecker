@@ -44,7 +44,7 @@ const Font = () => {
         <div className="preview-text" id="previewText">
           This is a preview text.
         </div>
-      </div>
+      </div><br></br>
       <button className="applyBtn" onClick={handleApply}>
         Apply
       </button>
