@@ -7,10 +7,24 @@
   height: auto;
 }
 
-h1 {
-  margin-bottom: 25px;
-  font-size: 24px;
-  color: #2c3e50;
+.selectContainer {
+  background-color: #fff;
+  border: 1px;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: block;
+  align-items: center;
+  margin-bottom: 12px;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  h1 {
+    display: flex;
+    justify-content: left;
+    font-size: 16px;
+    color: #2c3e50;
+    margin: 5px 6px;
+  }
 }
 
 .botButtons {

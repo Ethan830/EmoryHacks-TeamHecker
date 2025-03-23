@@ -4,7 +4,7 @@ import ToggleSetting from "../../components/ToggleSetting";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ColorBlind, Font } from "../../routes";
 import fontIcon from "../../images/font.png";
-import fonticon from "../../images/color.png"
+import fonticon from "../../images/color.png";
 
 const Home = () => {
   return (
