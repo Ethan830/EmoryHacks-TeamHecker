@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BackButton from "../../components/BackButton";
 import Switch from "../../components/Switch";
-import './index.css';
+import "./index.css";
 
 const Font = () => {
   const [fontSize, setFontSize] = useState(16); // Default preview size
@@ -25,20 +25,8 @@ const Font = () => {
         }
       );
     });
-    
   };
-  const handleApply = () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.tabs.sendMessage(tabs[0].id, {}, (response) => {
-        if (chrome.runtime.lastError) {
-          console.error("Message failed:", chrome.runtime.lastError.message);
-        } else {
-          console.log("Message success:", response);
-        }
-      });
-    });
-    
-  };
+
   return (
     <div className="body">
       <BackButton />
@@ -54,7 +42,11 @@ const Font = () => {
           value={fontSize}
           onChange={(e) => setFontSize(e.target.value)}
         />
-        <div className="preview-text" id="previewText" style={{ fontSize: `${fontSize}px` }}>
+        <div
+          className="preview-text"
+          id="previewText"
+          style={{ fontSize: `${fontSize}px` }}
+        >
           This is a preview text.
         </div>
       </div>

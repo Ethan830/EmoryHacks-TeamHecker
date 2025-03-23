@@ -98,7 +98,7 @@ const ColorBlind = () => {
       />
 
       <div className="botButtons">
-        <button className="applyBtn" onClick={handleApply}>
+        <button className="CBapplyBtn" onClick={handleApply}>
           Apply
         </button>
         <button className="testButton" onClick={handleClick}>

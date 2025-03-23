@@ -17,26 +17,36 @@ h1 {
   display: flex;
 }
 
-.applyBtn {
+.CBapplyBtn {
   padding: 10px 16px;
+  width: 50%;
   font-size: 16px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 5px;
   transition: background-color 0.2s;
 }
 
-.applyBtn:hover {
+.CBapplyBtn:hover {
   background-color: #0056b3;
 }
 
 .testButton {
-  background-color: #28a745;
+  padding: 10px 16px;
+  width: 50%;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: background-color 0.2s;
 }
 
 .testButton:hover {
-  background-color: #1e7e34;
+  background-color: #0056b3;
 }
