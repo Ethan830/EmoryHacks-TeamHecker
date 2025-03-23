@@ -6,7 +6,7 @@
   "action": {
     "default_popup": "index.html",
     "default_icon": {
-      "16": "logo.jpg"
+      "16": "logo.png"
     }
   },
   "permissions": ["activeTab", "scripting", "storage", "tabs"],
