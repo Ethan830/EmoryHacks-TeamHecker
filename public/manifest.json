@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Color Blind Adjuster",
   "version": "1.0",
-  "description": "Adjust webpage colors for different types of color blindness.",
+  "description": "Adjust webpage colors and font sizes for accessibility.",
   "action": {
     "default_popup": "index.html",
     "default_icon": {
@@ -10,6 +10,7 @@
     }
   },
   "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
 
   "background": {
     "service_worker": "static/js/background.js"
@@ -18,7 +19,8 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content/index.js"]
+      "js": ["content/index.js"],
+      "run_at": "document_idle"
     }
   ]
 }

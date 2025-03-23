@@ -8,19 +8,32 @@ const Font = () => {
   const [fontToggle, setFontToggle] = useState(false); // Switch status
 
   const handleApplyFontSize = () => {
+    console.log("Font Toggle:", fontToggle, "Font Size:", fontSize);
+
     if (!fontToggle) {
       console.log("Font change is OFF. Skipping font size change.");
       return;
     }
+
+    if (!chrome?.tabs?.query) {
+      console.error("❌ chrome.tabs.query is not available. Are you testing outside the extension?");
+      return;
+    }
+
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      if (tabs.length === 0) {
+        console.error("❌ No active tab found.");
+        return;
+      }
+
       chrome.tabs.sendMessage(
         tabs[0].id,
-        { action: "changeFontSize", size: fontSize },
+        { action: "changeFontSize", size: Number(fontSize) },
         (response) => {
           if (chrome.runtime.lastError) {
-            console.error("Message failed:", chrome.runtime.lastError.message);
+            console.error("❌ Message failed:", chrome.runtime.lastError.message);
           } else {
-            console.log("Font size change success:", response);
+            console.log("✅ Font size change success:", response);
           }
         }
       );
