@@ -5,7 +5,7 @@ const Option = ({ label, color }) => {
   return (
     <div className="option">
       <label for={color}>{label}</label>
-      <input type="checkbox" id={color} class="colorblind-checkbox" />
+      <input type="radio" name="foo" id={color} class="colorblind-checkbox" />
     </div>
   );
 };

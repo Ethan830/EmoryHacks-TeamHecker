@@ -13,6 +13,10 @@ h1 {
   color: #2c3e50;
 }
 
+.botButtons {
+  display: flex;
+}
+
 .applyBtn {
   padding: 10px 16px;
   font-size: 16px;
@@ -29,10 +33,10 @@ h1 {
   background-color: #0056b3;
 }
 
-#testButton {
+.testButton {
   background-color: #28a745;
 }
 
-#testButton:hover {
+.testButton:hover {
   background-color: #1e7e34;
 }

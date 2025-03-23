@@ -47,12 +47,14 @@ const ColorBlind = () => {
         onClick={() => setSelectedMode("tritanopia")}
       />
 
-      <button className="applyBtn" onClick={handleApply}>
-        Apply
-      </button>
-      <button id="testButton" onClick={handleClick}>
-        Take Color Blind Test
-      </button>
+      <div className="botButtons">
+        <button className="applyBtn" onClick={handleApply}>
+          Apply
+        </button>
+        <button className="testButton" onClick={handleClick}>
+          Find Your Colorblindness!
+        </button>
+      </div>
     </div>
   );
 };
