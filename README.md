@@ -1,3 +1,5 @@
+![Alt text](./src/images/logo-transparent.png?raw=true "Logo")
+
 Visibly — Your Personalized Web Accessibility Toolkit
 
 Visibly enhances your browsing experience by adapting webpages to fit your visual needs.
