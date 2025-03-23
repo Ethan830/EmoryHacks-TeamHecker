@@ -26,7 +26,7 @@ const ColorBlind = () => {
 
   return (
     <div className="colorblind-page">
-      <BackButton />
+      <BackButton /><br></br>
       <Switch label={"Colorblind Filter"} storageKey="colorToggle" />
 
       <h1>Choose Your Type</h1>

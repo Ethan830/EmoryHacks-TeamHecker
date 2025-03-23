@@ -29,7 +29,7 @@ const Font = () => {
   };
   return (
     <div class="body">
-      <BackButton />
+      <BackButton /><br></br>
       <Switch label={"Font"} storageKey="fontToggle" />
       <div className="font-size-container" onClick={handleSlide}>
         <label for="fontSlider">Font Size</label>
