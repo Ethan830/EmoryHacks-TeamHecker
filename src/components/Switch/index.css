@@ -17,6 +17,7 @@
 .inline-container div {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .label {

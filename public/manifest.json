@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Color Blind Adjuster",
+  "name": "Visibly",
   "version": "1.0",
-  "description": "Adjust webpage colors and font sizes for accessibility.",
+  "description": "Visibly helps you personalize the web with colorblind-friendly filters and readable font sizes — for a clearer, more accessible browsing experience.",
   "action": {
     "default_popup": "index.html",
     "default_icon": {

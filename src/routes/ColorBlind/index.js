@@ -82,26 +82,27 @@ const ColorBlind = () => {
         }
       />
 
-      <h1>Select Your Colorblindness</h1>
-
-      <Option
-        label="Protanopia"
-        color="red"
-        isSelected={selectedMode === "protanopia"}
-        onClick={() => setSelectedMode("protanopia")}
-      />
-      <Option
-        label="Deuteranopia"
-        color="green"
-        isSelected={selectedMode === "deuteranopia"}
-        onClick={() => setSelectedMode("deuteranopia")}
-      />
-      <Option
-        label="Tritanopia"
-        color="blue"
-        isSelected={selectedMode === "tritanopia"}
-        onClick={() => setSelectedMode("tritanopia")}
-      />
+      <div className="selectContainer">
+        <h1>Select Your Colorblindness</h1>
+        <Option
+          label="Protanopia"
+          color="red"
+          isSelected={selectedMode === "protanopia"}
+          onClick={() => setSelectedMode("protanopia")}
+        />
+        <Option
+          label="Deuteranopia"
+          color="green"
+          isSelected={selectedMode === "deuteranopia"}
+          onClick={() => setSelectedMode("deuteranopia")}
+        />
+        <Option
+          label="Tritanopia"
+          color="blue"
+          isSelected={selectedMode === "tritanopia"}
+          onClick={() => setSelectedMode("tritanopia")}
+        />
+      </div>
 
       <div className="botButtons">
         <button className="CBapplyBtn" onClick={handleApply}>
