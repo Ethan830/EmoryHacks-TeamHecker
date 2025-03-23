@@ -1,17 +1,29 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
 import BackButton from "../../components/BackButton";
 import Switch from "../../components/Switch";
-import './index.css'
+import './index.css';
 
 const Font = () => {
-  const [fontSize, setFontSize] = useState(16);
-  const handleSlide = () => {
-    // use useEffect, edit later
-    const slider = document.getElementById("fontSlider");
-    const preview = document.getElementById("previewText");
-    slider.addEventListener("input", () => {
-      preview.style.fontSize = slider.value + "px";
-      
+  const [fontSize, setFontSize] = useState(16); // Default preview size
+  const [fontToggle, setFontToggle] = useState(false); // Switch status
+
+  const handleApplyFontSize = () => {
+    if (!fontToggle) {
+      console.log("Font change is OFF. Skipping font size change.");
+      return;
+    }
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        { action: "changeFontSize", size: fontSize },
+        (response) => {
+          if (chrome.runtime.lastError) {
+            console.error("Message failed:", chrome.runtime.lastError.message);
+          } else {
+            console.log("Font size change success:", response);
+          }
+        }
+      );
     });
     
   };
@@ -28,25 +40,27 @@ const Font = () => {
     
   };
   return (
-    <div class="body">
-      <BackButton /><br></br>
-      <Switch label={"Font"} storageKey="fontToggle" />
-      <div className="font-size-container" onClick={handleSlide}>
-        <label for="fontSlider">Font Size</label>
+    <div className="body">
+      <BackButton />
+      <Switch label={"Font"} storageKey="fontToggle" onToggle={setFontToggle} />
+
+      <div className="font-size-container">
+        <label htmlFor="fontSlider">Font Size</label>
         <input
           type="range"
           id="fontSlider"
           min="10"
           max="40"
           value={fontSize}
-          onChange={(e) => setFontSize(Number(e.target.value))}
+          onChange={(e) => setFontSize(e.target.value)}
         />
-        <div className="preview-text" id="previewText">
+        <div className="preview-text" id="previewText" style={{ fontSize: `${fontSize}px` }}>
           This is a preview text.
         </div>
-      </div><br></br>
-      <button className="applyBtn" onClick={handleApply}>
-        Apply
+      </div>
+
+      <button className="applyBtn" onClick={handleApplyFontSize}>
+        Apply Font Size
       </button>
     </div>
   );

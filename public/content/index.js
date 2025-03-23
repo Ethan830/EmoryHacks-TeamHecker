@@ -3,7 +3,7 @@ console.log("✅ Color Blind Filter Content Script Loaded");
 function applyFilter(mode) {
   const body = document.body;
 
-  // Clear previous filter
+
   body.style.filter = "none";
 
   // Apply the desired filter
@@ -22,12 +22,23 @@ function applyFilter(mode) {
   }
 }
 
-function changeFontSize(size) {
-  const elements = document.querySelectorAll("*");
+function changeFontSize(desiredSize) {
+  console.log(`🔠 Adjusting font size to minimum ${desiredSize}px where needed...`);
+  const elements = document.querySelectorAll("body *:not(script):not(style)");
+
   elements.forEach((el) => {
-    el.style.fontSize = `${size}px`;
+    if (el.innerText.trim().length > 0) {
+      const computedStyle = window.getComputedStyle(el);
+      const currentSize = parseFloat(computedStyle.fontSize);
+
+      if (currentSize < desiredSize) {
+        el.style.fontSize = `${desiredSize}px`;
+        console.log(`✅ Increased font size for`, el);
+      }
+    }
   });
 }
+
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log("✅ Content script received message:", request);
