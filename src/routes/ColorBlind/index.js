@@ -29,7 +29,10 @@ const ColorBlind = () => {
           { action: "applyColorFilter", mode: "none" },
           (response) => {
             if (chrome.runtime.lastError) {
-              console.error("Message failed:", chrome.runtime.lastError.message);
+              console.error(
+                "Message failed:",
+                chrome.runtime.lastError.message
+              );
             } else {
               console.log("✅ Color filter reset:", response);
             }
@@ -74,9 +77,12 @@ const ColorBlind = () => {
         label={"Colorblind Filter"}
         storageKey="colorToggle"
         onToggle={setColorToggle}
+        description={
+          "Apply a color filter that adapts webpage colors for different types of colorblindness."
+        }
       />
 
-      <h1>Choose Your Type</h1>
+      <h1>Select Your Colorblindness</h1>
 
       <Option
         label="Protanopia"

@@ -30,10 +30,16 @@ const Font = () => {
   return (
     <div className="body">
       <BackButton />
-      <Switch label={"Font"} storageKey="fontToggle" onToggle={setFontToggle} />
+      <Switch
+        label={"Font"}
+        storageKey="fontToggle"
+        onToggle={setFontToggle}
+        description={
+          "Make small text easier to read — this feature upgrades all small fonts on the page to your selected size, while keeping larger text as-is."
+        }
+      />
 
       <div className="font-size-container">
-        <label htmlFor="fontSlider">Font Size</label>
         <input
           type="range"
           id="fontSlider"
@@ -52,7 +58,7 @@ const Font = () => {
       </div>
 
       <button className="applyBtn" onClick={handleApplyFontSize}>
-        Apply Font Size
+        Apply
       </button>
     </div>
   );

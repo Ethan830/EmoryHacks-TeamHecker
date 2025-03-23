@@ -1,5 +1,5 @@
 .inline-container {
-  display: flex;
+  display: block;
   grid-template-columns: auto 1fr auto auto;
   align-items: center;
   width: 100%;
@@ -12,10 +12,14 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
   gap: 8px;
+}
+
+.inline-container div {
+  display: flex;
   justify-content: space-between;
 }
 
-.inline-container span {
+.label {
   font-size: 16px;
   font-weight: 500;
 }
@@ -64,4 +68,10 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(24px);
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
 }

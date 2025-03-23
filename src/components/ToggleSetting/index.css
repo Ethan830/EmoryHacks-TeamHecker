@@ -1,4 +1,4 @@
-.inline-container {
+.container {
   display: grid;
   grid-template-columns: auto 1fr auto; /* icon+label | switch | button */
   align-items: center;
@@ -14,12 +14,12 @@
   gap: 12px;
 }
 
-.inline-container span {
+.container span {
   font-size: 16px;
   font-weight: 500;
 }
 
-.inline-container img {
+.container img {
   width: 25px;
   height: 25px;
 }

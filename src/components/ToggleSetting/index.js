@@ -10,7 +10,7 @@ const ToggleSetting = ({ label, route, icon }) => {
   };
 
   return (
-    <div className="inline-container">
+    <div className="container">
       <img src={icon} alt="" />
       <span>{label}</span>
       <button onClick={handleClick} className="side-button">
