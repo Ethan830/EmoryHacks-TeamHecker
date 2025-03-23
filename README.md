@@ -1,3 +1,16 @@
+Visibly — Your Personalized Web Accessibility Toolkit
+
+Visibly enhances your browsing experience by adapting webpages to fit your visual needs.
+Whether you’re colorblind or prefer larger, more readable text, Visibly helps you take control of how content appears — no matter where you are on the web.
+
+🎨 Colorblind Filters – Choose from Protanopia, Deuteranopia, or Tritanopia modes to apply real-time color adjustments for better visibility.
+
+🔠 Font Control – Set your preferred minimum font size. Smaller text will automatically scale up for easier reading, while larger text remains unchanged.
+
+✅ Simple & Seamless – Quick to enable, easy to personalize, and works on any website.
+
+Empowering accessibility, one tab at a time.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
