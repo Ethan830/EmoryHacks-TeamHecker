@@ -1,12 +1,12 @@
 .back-button {
   display: inline-block;
   font-size: 16px;
-  color: #007bff;
+  color: #84878b;
   text-decoration: none;
   margin-bottom: 10px;
   font-weight: 500;
 }
 
 .back-button:hover {
-  text-decoration: underline;
+  text-decoration: black;
 }

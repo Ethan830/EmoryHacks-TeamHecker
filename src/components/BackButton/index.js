@@ -7,7 +7,7 @@ const BackButton = () => {
 
   return (
     <button className="back-button" onClick={() => navigate("/")}>
-      &#8592; Back
+      &lt;Back
     </button>
   );
 };

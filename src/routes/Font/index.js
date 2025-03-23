@@ -11,9 +11,22 @@ const Font = () => {
     const preview = document.getElementById("previewText");
     slider.addEventListener("input", () => {
       preview.style.fontSize = slider.value + "px";
+      
     });
+    
   };
-
+  const handleApply = () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      chrome.tabs.sendMessage(tabs[0].id, {}, (response) => {
+        if (chrome.runtime.lastError) {
+          console.error("Message failed:", chrome.runtime.lastError.message);
+        } else {
+          console.log("Message success:", response);
+        }
+      });
+    });
+    
+  };
   return (
     <div class="body">
       <BackButton />
@@ -32,6 +45,9 @@ const Font = () => {
           This is a preview text.
         </div>
       </div>
+      <button className="applyBtn" onClick={handleApply}>
+        Apply
+      </button>
     </div>
   );
 };
