@@ -9,11 +9,15 @@ const ColorBlind = () => {
 
   const handleApply = () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.tabs.sendMessage(tabs[0].id, {
-        action: "applyColorFilter",
-        mode: selectedMode,
+      chrome.tabs.sendMessage(tabs[0].id, { action: "applyColorFilter", mode: selectedMode }, (response) => {
+        if (chrome.runtime.lastError) {
+          console.error("Message failed:", chrome.runtime.lastError.message);
+        } else {
+          console.log("Message success:", response);
+        }
       });
     });
+    
   };
 
   const handleClick = () => {
