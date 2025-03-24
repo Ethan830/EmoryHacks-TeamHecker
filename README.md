@@ -13,6 +13,8 @@ Whether you’re colorblind or prefer larger, more readable text, Visibly helps 
 
 Empowering accessibility, one tab at a time.
 
+Learn more about Visibly and how it was created, [click here!](https://devpost.com/software/visibly-6kja0c)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
